@@ -120,18 +120,28 @@ img {
 
 /* HERO */
 .hero {
-  min-height: calc(100vh - 78px);
+  min-height: calc(100vh - 70px);
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5,13,21,.72) 0%,
+      rgba(5,13,21,.55) 40%,
+      rgba(5,13,21,.55) 60%,
+      rgba(5,13,21,.72) 100%
+    ),
+    url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  /* THIS CENTERS YOUR FACE */
+  background-position: center center;
+
   display: flex;
   align-items: center;
-  padding: clamp(70px, 9vw, 110px) clamp(22px, 6vw, 70px);
-  background-color: #050d15;
-  background-image:
-    linear-gradient(90deg, rgba(5,13,21,.96) 0%, rgba(5,13,21,.88) 48%, rgba(5,13,21,.35) 100%),
-    url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
-  background-size: cover, cover;
-  /* Keep the portrait centered on both desktop and mobile */
-  background-position: center center, center center;
-  background-repeat: no-repeat;
+
+  padding: 80px 40px;
 }
 
 .hero-content {
@@ -607,13 +617,22 @@ body::after {
   .nav-links.show { transform: translateX(0); }
   .nav-links a { font-size: 14px; padding: 6px 0; }
   .hero {
-    min-height: calc(100vh - 70px);
-    background-image:
-      linear-gradient(90deg, rgba(5,13,21,.98) 0%, rgba(5,13,21,.92) 100%),
-      url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
-    background-size: cover, cover;
-    background-position: center, center;
-  }
+  min-height: calc(100vh - 70px);
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(5,13,21,.88) 0%,
+      rgba(5,13,21,.68) 45%,
+      rgba(5,13,21,.55) 100%
+    ),
+    url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
+  background-size: auto 100%;
+  background-repeat: no-repeat;
+  background-position: 75% center;
+  display: flex;
+  align-items: center;
+  padding: 60px 25px;
+}
   .buttons { flex-direction: column; align-items: flex-start; }
   .btn { width: min(100%, 280px); text-align: center; }
   .about-grid,
