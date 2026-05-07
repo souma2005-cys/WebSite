@@ -630,8 +630,8 @@ body::after {
   background-repeat: no-repeat;
   background-position: 75% center;
   display: flex;
-  align-items: center;
-  padding: 60px 25px;
+  align-items: flex-start; /* changed */
+  padding: 300px 25px 60px; /* changed */
 }
   .buttons { flex-direction: column; align-items: flex-start; }
   .btn { width: min(100%, 280px); text-align: center; }
