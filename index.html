@@ -13,13 +13,14 @@
 <body>
   <nav class="navbar">
     <button class="menu-toggle" aria-label="Open toolbar" aria-expanded="false">☰</button>
-    <div class="logo">
-      <div class="logo-icon">🔒</div>
-      <div>
-        <span>Souma deep</span>
-        <span class="green">Pal</span>
-      </div>
-    </div>
+    <a href="#home" class="logo">
+  <div class="logo-icon">🔒</div>
+
+  <div>
+    <span>Souma deep</span>
+    <span class="green">Pal</span>
+  </div>
+</a>
     <ul class="nav-links">
       <li><a class="active" href="#home">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
@@ -247,7 +248,7 @@
   </div>
 
 </section>
-  <script>
+ <script>
   const menuToggle = document.querySelector('.menu-toggle');
   const navLinks = document.querySelector('.nav-links');
   const navItems = document.querySelectorAll('.nav-links a, .logo');
