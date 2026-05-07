@@ -335,6 +335,23 @@ section {
 
 .experience-item { padding: clamp(22px, 4vw, 28px); }
 
+.education .cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.education .card a {
+  display: inline-block;
+  margin-top: auto;
+  color: var(--green);
+  font-weight: bold;
+}
+
+.education .card {
+  padding: clamp(22px, 4vw, 28px);
+  min-height: unset;
+
+  align-items: flex-start;
+}
+
 .experience-header {
   display: flex;
   align-items: center;
@@ -652,6 +669,13 @@ body::after {
   }
   .experience-period { white-space: normal; }
   .card { align-items: flex-start; }
+  .education .card {
+    flex-direction: column;
+    gap: 14px;
+  }
+  .education .card a {
+    margin-top: 0;
+  }
   .contact { padding-inline: 22px; }
   .contact-header { padding-left: 18px; }
   .contact-label { letter-spacing: 5px; }
