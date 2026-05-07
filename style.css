@@ -147,11 +147,6 @@ img {
 .hero-content {
   max-width: 560px;
   animation: fadeUp .9s ease both;
-
-  position: absolute;
-  top: 55%;
-  
-  transform: translate(-50%, -50%);
 }
 
 .hero h3 {
