@@ -248,23 +248,50 @@
 
 </section>
   <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  const navItems = document.querySelectorAll('.nav-links a');
 
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-      const isOpen = navLinks.classList.contains('show');
-      menuToggle.setAttribute('aria-expanded', isOpen);
-      menuToggle.setAttribute('aria-label', isOpen ? 'Close toolbar' : 'Open toolbar');
-    });
+  // Toggle sidebar
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
 
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
+    const isOpen = navLinks.classList.contains('show');
+
+    menuToggle.setAttribute('aria-expanded', isOpen);
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Close toolbar' : 'Open toolbar'
+    );
+  });
+
+  // Auto close after clicking menu item
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+
+      // small delay for smoother mobile behavior
+      setTimeout(() => {
         navLinks.classList.remove('show');
+
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.setAttribute('aria-label', 'Open toolbar');
-      });
+      }, 100);
     });
-  </script>
+  });
+
+  // Optional: close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (
+      navLinks.classList.contains('show') &&
+      !navLinks.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
+      navLinks.classList.remove('show');
+
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.setAttribute('aria-label', 'Open toolbar');
+    }
+  });
+</script>
 </body>
 </html>
