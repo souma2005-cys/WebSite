@@ -132,11 +132,11 @@ img {
     ),
     url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
 
-  background-size: auto cover;
+  background-size: cover;
   background-repeat: no-repeat;
 
   /* THIS CENTERS YOUR FACE */
-  background-position: 75% center;
+  background-position: center center;
 
   display: flex;
   align-items: center;
