@@ -26,11 +26,27 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--bg);
+  background: radial-gradient(circle at top left, rgba(0, 240, 213, 0.12), transparent 24%),
+              radial-gradient(circle at bottom right, rgba(142, 255, 69, 0.12), transparent 18%),
+              linear-gradient(180deg, #050b12 0%, #06111a 60%, #07141c 100%);
   color: var(--text);
   line-height: 1.6;
   min-width: 320px;
   overflow-x: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(0deg, rgba(0, 250, 210, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(142, 255, 69, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.45;
+  z-index: -1;
 }
 
 a {
@@ -119,29 +135,25 @@ img {
 }
 
 /* HERO */
+/* HERO */
 .hero {
-  min-height: calc(100vh - 70px);
-
+  min-height: calc(100vh - 78px);
   background-image:
     linear-gradient(
       90deg,
-      rgba(5,13,21,.72) 0%,
-      rgba(5,13,21,.55) 40%,
-      rgba(5,13,21,.55) 60%,
-      rgba(5,13,21,.72) 100%
+      rgba(5,13,21,.82) 0%,
+      rgba(5,13,21,.62) 45%,
+      rgba(5,13,21,.35) 100%
     ),
     url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
 
   background-size: cover;
   background-repeat: no-repeat;
-
-  /* THIS CENTERS YOUR FACE */
   background-position: center center;
 
   display: flex;
   align-items: center;
-
-  padding: 80px 40px;
+  padding: 90px 40px;
 }
 
 .hero-content {
@@ -352,11 +364,39 @@ section {
   align-items: flex-start;
 }
 
+.experience-top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.experience-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: rgba(0, 240, 213, .08);
+  border: 1px solid rgba(0, 240, 213, .2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  padding: 8px;
+}
+
+.experience-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
 .experience-header {
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 8px;
+  margin-bottom: 0;
   flex-wrap: wrap;
 }
 
@@ -413,6 +453,36 @@ section {
   background: rgba(0, 240, 213, .25);
   border-color: var(--cyan);
   color: var(--cyan);
+}
+/* EXPERIENCE LOGO CIRCLE */
+.experience-logo {
+  width: 75px;
+  height: 75px;
+  min-width: 75px;
+
+  border-radius: 50%; /* perfect circle */
+
+  background: #08141f;
+  border: 2px solid rgba(0, 240, 213, 0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  padding: 8px;
+
+  box-shadow: 0 0 18px rgba(0, 240, 213, 0.15);
+}
+
+.experience-logo img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+  object-position: center;
+
+  display: block;
 }
 
 /* PROJECTS */
@@ -613,46 +683,57 @@ body::after {
     top: 14px;
     z-index: 1100;
   }
-  .logo { font-size: 15px;
-         order: 1;
-        }
+  .logo {
+    font-size: 15px;
+    order: 1;
+  }
   .logo-icon { width: 36px; height: 36px; }
   .nav-links {
     display: flex;
     position: fixed;
     top: 70px;
-    left: 0;
+    right: 0;
+    left: auto;
     width: min(82vw, 280px);
     height: calc(100vh - 70px);
     padding: 22px;
     background: rgba(5, 11, 18, .98);
-    border-right: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+    border-right: none;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 18px;
-    transform: translateX(-105%);
+    transform: translateX(105%);
     transition: transform .3s ease;
-    box-shadow: 12px 0 30px rgba(0, 0, 0, .35);
+    box-shadow: -12px 0 30px rgba(0, 0, 0, .35);
   }
   .nav-links.show { transform: translateX(0); }
   .nav-links a { font-size: 14px; padding: 6px 0; }
+  @media (max-width: 768px) {
   .hero {
-  min-height: calc(100vh - 70px);
-  background-image:
-    linear-gradient(
-      90deg,
-      rgba(5,13,21,.88) 0%,
-      rgba(5,13,21,.68) 45%,
-      rgba(5,13,21,.55) 100%
-    ),
-    url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: 75% center;
-  display: flex;
-  align-items: flex-start; /* changed */
-  padding: 400px 25px 60px; /* changed */
+    min-height: calc(100vh - 70px);
+
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(5,13,21,.55) 0%,
+        rgba(5,13,21,.72) 45%,
+        rgba(5,13,21,.94) 100%
+      ),
+      url("Image/ChatGPT Image May 4, 2026, 10_32_39 PM.png");
+
+    background-size: cover;
+    background-repeat: no-repeat;
+     background-position: 75% center;
+
+    align-items: flex-end;
+    padding: 0 25px 70px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
 }
   .buttons { flex-direction: column; align-items: flex-start; }
   .btn { width: min(100%, 280px); text-align: center; }
@@ -718,6 +799,18 @@ body::after {
     scroll-behavior: auto !important;
     transition-duration: .01ms !important;
   }
+}
+.card,
+.experience-item,
+.contact-item,
+.socials a,
+.btn {
+  will-change: transform;
+}
+
+body::before,
+body::after {
+  will-change: transform;
 }
 
 /* ANIMATIONS */
