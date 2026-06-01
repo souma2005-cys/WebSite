@@ -670,43 +670,36 @@ body::after {
   html { scroll-padding-top: 72px; }
   .navbar {
     min-height: 70px;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 18px;
-    position: relative;
   }
   .menu-toggle {
     display: grid;
     place-items: center;
     position: absolute;
-    right: 18px;
-    left: auto;
+    left: 18px;
     top: 14px;
     z-index: 1100;
   }
-  .logo {
-    font-size: 15px;
-    order: 1;
-  }
+  .logo { font-size: 15px; }
   .logo-icon { width: 36px; height: 36px; }
   .nav-links {
     display: flex;
     position: fixed;
     top: 70px;
-    right: 0;
-    left: auto;
+    left: 0;
     width: min(82vw, 280px);
     height: calc(100vh - 70px);
     padding: 22px;
     background: rgba(5, 11, 18, .98);
-    border-left: 1px solid var(--line);
-    border-right: none;
+    border-right: 1px solid var(--line);
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 18px;
-    transform: translateX(105%);
+    transform: translateX(-105%);
     transition: transform .3s ease;
-    box-shadow: -12px 0 30px rgba(0, 0, 0, .35);
+    box-shadow: 12px 0 30px rgba(0, 0, 0, .35);
   }
   .nav-links.show { transform: translateX(0); }
   .nav-links a { font-size: 14px; padding: 6px 0; }
